@@ -1,5 +1,6 @@
 package temelKavramlarVeDegiskenler;
 
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 /**
@@ -20,6 +21,7 @@ public class ManavKasa {
         final double TOMATO = 1.11;
         final double BANANA = 0.95;
         final double EGGPLANT = 5;
+        final Scanner scanner = new Scanner(System.in);
         double prices[] = { PEAR, APPLE, TOMATO, BANANA, EGGPLANT };
         double total = 0;
         double weight;
@@ -30,14 +32,14 @@ public class ManavKasa {
             "Weight of banana in kgs: ", 
             "Weight of eggplant in kgs: " 
         };
-
-        Scanner scan = new Scanner(System.in);
-        for (int i = 0; i < messages.length; i++) {
-            weight = getWeight(messages[i], scan);
-            total += weight * prices[i];
+        
+        try (scanner) {
+            for (int i = 0; i < messages.length; i++) {
+                weight = getWeight(messages[i], scanner);
+                total += weight * prices[i];
+            }
         }
-        scan.close();
-
+        
         System.out.printf("Total price %.2f", total);
     }
 
@@ -46,15 +48,15 @@ public class ManavKasa {
      * input2: a scanner instance to get value
      * output: weight value of the particular product
      */
-    public static double getWeight(String message, Scanner scan) {
+    public static double getWeight(String message, Scanner scanner) {
         System.out.print(message);
 
-        while (!scan.hasNextDouble()) {
+        while (!scanner.hasNextDouble()) {
             System.out.println("Weight value must be a number");
             System.out.print(message);
-            scan.next();
+            scanner.next();
         }
 
-        return scan.nextDouble();
+        return scanner.nextDouble();
     }
 }
