@@ -14,10 +14,6 @@ public class VucutKitleIndeksiHesapla {
             weight = getValue("Lütfen kilonuzu giriniz: ", scanner);
             bodyMassIndex = weight / (float) Math.pow(length, 2);
             System.out.printf("Vücut Kitle İndeksiniz: %.2f", bodyMassIndex);
-        } finally {
-            if (scanner != null) {
-                scanner.close();
-            }
         }
     }
 
