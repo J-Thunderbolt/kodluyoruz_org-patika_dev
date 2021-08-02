@@ -1,0 +1,15 @@
+{
+  "name": "react-hw-1",
+  "version": "1.0.0",
+  "description": "patika.dev React Temel kursunun 1. ödevi",
+  "main": "app.js",
+  "type": "module",
+  "scripts": {
+    "start": "node ./src/app.js"
+  },
+  "author": "Yunus Yıldırım",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
