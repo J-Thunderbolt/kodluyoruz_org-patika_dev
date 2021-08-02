@@ -10,19 +10,19 @@ Basitçe sizden girişte isminizi isteyip sonra bu ismi karşılama ekranına ye
 
 - Gün olarak aldığınız değeri `string` olarak göstermeniz gerekmektedir. (**İpucu**: 1 = Pazartesi)
 
-  - Günü almak için `toLocaleString()` metodunu kullandım.
+  - *Günü almak için `toLocaleString()` metodunu kullandım.*
   
 
 - Eğer saat, dakika ya da saniye 10'dan küçükse başına 0'ı koymalısınız.
 
-  - Saati dakika ve saniyeyi alırken `toString().padStart(2, '0')` kullanarak yaptım.
+  - *Saati dakika ve saniyeyi alırken `toString().padStart(2, '0')` kullanarak yaptım.*
   
 
 - Her 1 saniyede bir yenilenmelidir.
 
-  - `setInterval()` metodunu kullanarak yaptım.
+  - *`setInterval()` metodunu kullanarak yaptım.*
   
 
 - Kullanıcıdan alınan ad direkt olarak ekrana yazılmalıdır.
 
-  - prompt() ile kullanıcıdan aldığım isim bilgisini querySelector kullanarak ekrandaki ilgili yere yazdım.
+  - *`prompt()` ile kullanıcıdan aldığım isim bilgisini `querySelector` kullanarak ekrandaki ilgili yere yazdım.*
