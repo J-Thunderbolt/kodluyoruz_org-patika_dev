@@ -25,6 +25,7 @@ public class NeuralNetwork {
         }
     }
 
+    // TODO edit this
     public static void createTrainingData() {
         // XOR Dataset
         float[] input1 = new float[] { 0, 0 }; // Expect 0 here
