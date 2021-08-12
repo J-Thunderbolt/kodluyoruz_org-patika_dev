@@ -6,7 +6,7 @@
 
 ## Resources:
 
-: [DeepLearning.AI Neural Networks and Deep Learning Course](https://www.coursera.org/learn/neural-networks-deep-learning)
+- [DeepLearning.AI Neural Networks and Deep Learning Course](https://www.coursera.org/learn/neural-networks-deep-learning)
 
 - [Weight Initializetion Techniques](https://towardsdatascience.com/weight-initialization-techniques-in-neural-networks-26c649eb3b78)
 
