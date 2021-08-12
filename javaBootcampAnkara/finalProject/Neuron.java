@@ -3,13 +3,18 @@ public class Neuron {
     float[] cacheWeights;
     float gradient;
     float bias;
-    float value = 0;
+    float value;
 
     public Neuron(float[] weights, float bias) {
         this.weights = weights;
         this.bias = bias;
         this.cacheWeights = weights;
         this.gradient = 0;
+    }
+
+    @Override
+    public String toString() {
+        return "Neuron [Output = " + value + "]";
     }
 
     public Neuron(float value) {
