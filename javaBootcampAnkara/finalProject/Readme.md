@@ -1,4 +1,4 @@
-# Basic neural network implementation from scratch with java
+# Basic neural network implementation with java
 <!-- <img src="https://render.githubusercontent.com/render/math?math=x_{1,2} = \frac{-b \pm \sqrt{b^2-4ac}}{2b}"> -->
 <img src="https://render.githubusercontent.com/render/math?math=net_{h_0} = w_{0,1} * i_0 %2B w_{0,2} * i_1 %2B b_0">
 
