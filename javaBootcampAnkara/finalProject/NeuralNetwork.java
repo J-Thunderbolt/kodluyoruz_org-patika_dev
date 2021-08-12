@@ -1,52 +1,13 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.List;
-import java.util.stream.Collectors;
-
 public class NeuralNetwork {
-    static Layer[] layers;
-    static TrainingData[] trainingData;
+    Layer[] layers;
+    TrainingData[] trainingData;
 
-    public static void main(String[] args) {
-        layers = new Layer[3];
-        layers[0] = null;
-        layers[1] = new Layer(2, 6);
-        layers[2] = new Layer(6, 1);
-
-        createTrainingData();
-
-        System.out.println("\nOutputs before training");
-        System.out.println("**************************");
-        for (TrainingData trainingDatum : trainingData) {
-            forwardPropagation(trainingDatum.data);
-            System.out.println(Arrays.asList(layers[layers.length - 1].neurons).stream().map(Object::toString)
-                    .collect(Collectors.joining("\n")));
-        }
-
-        train(99999, 0.05f);
-
-        System.out.println("\nOutputs after training");
-        System.out.println("**************************");
-        for (TrainingData trainingDatum : trainingData) {
-            forwardPropagation(trainingDatum.data);
-            System.out.println(Arrays.asList(layers[layers.length - 1].neurons).stream().map(Object::toString)
-                    .collect(Collectors.joining("\n")));
-        }
+    public NeuralNetwork(Layer[] layers, TrainingData[] trainingData) {
+        this.layers = layers;
+        this.trainingData = trainingData;
     }
 
-    // TODO edit this
-    public static void createTrainingData() {
-        // XOR Dataset
-        float[][] inputs = new float[][] { { 0, 0 }, { 0, 1 }, { 1, 0 }, { 1, 1 } };
-        float[] expectedOutputs = new float[] { 0, 1, 1, 0 };
-        trainingData = new TrainingData[4];
-
-        for (int i = 0; i < expectedOutputs.length; i++) {
-            trainingData[i] = new TrainingData(inputs[i], expectedOutputs[i]);
-        }
-    }
-
-    public static void forwardPropagation(float[] inputs) {
+    public void forwardPropagation(float[] inputs) {
         layers[0] = new Layer(inputs);
 
         for (int i = 1; i < layers.length; i++) {
@@ -61,7 +22,7 @@ public class NeuralNetwork {
         }
     }
 
-    public static void backpropagation(float learningRate, TrainingData trainingDatum) {
+    public void backpropagation(float learningRate, TrainingData trainingDatum) {
 
         int outputLayerIndex = layers.length - 1;
 
@@ -101,7 +62,7 @@ public class NeuralNetwork {
 
     }
 
-    public static float sumGradient(int neuronIndex, int layerIndex) {
+    public float sumGradient(int neuronIndex, int layerIndex) {
         float gradientSum = 0;
         Layer currentLayer = layers[layerIndex];
         for (int i = 0; i < currentLayer.neurons.length; i++) {
@@ -111,7 +72,7 @@ public class NeuralNetwork {
         return gradientSum;
     }
 
-    public static void train(int epochs, float learningRate) {
+    public void train(int epochs, float learningRate) {
         for (int i = 0; i < epochs; i++) {
             for (TrainingData trainingDatum : trainingData) {
                 forwardPropagation(trainingDatum.data);
