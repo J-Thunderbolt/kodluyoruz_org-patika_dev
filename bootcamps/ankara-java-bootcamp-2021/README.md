@@ -18,7 +18,7 @@ Projeyi cloneladıktan sonra Visual Studio Code programında açınız.
 
 Windows için:
 ```powershell
-cd assignments-yunus-yildirim
+cd ankara-java-bootcamp-2021
 code .
 ```
 - ***Not***:
