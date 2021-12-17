@@ -1,10 +1,7 @@
-import java.util.Arrays;
-import java.util.stream.Collectors;
-
 public class Main {
     public static void main(String[] args) {
         final float LEARNING_RATE = 0.05f;
-        final int EPOCH_SIZE = 99999;
+        final int EPOCH_SIZE = 100000;
         Layer[] layers = new Layer[3];
         TrainingData[] trainingData;
 
@@ -14,31 +11,22 @@ public class Main {
 
         NeuralNetwork neuralNetwork = new NeuralNetwork(layers, trainingData);
 
-        System.out.println("\nOutputs before training");
+        System.out.println("\nOutputs before training (after first iteration)");
         System.out.println("**************************");
-        for (TrainingData trainingDatum : trainingData) {
-            neuralNetwork.forwardPropagation(trainingDatum.data);
-            System.out.println(Arrays.asList(layers[layers.length - 1].neurons).stream().map(Object::toString)
-                    .collect(Collectors.joining("\n")));
-        }
+        neuralNetwork.predict();
 
         neuralNetwork.train(EPOCH_SIZE, LEARNING_RATE);
 
         System.out.println("\nOutputs after training");
         System.out.println("**************************");
-        for (TrainingData trainingDatum : trainingData) {
-            neuralNetwork.forwardPropagation(trainingDatum.data);
-            System.out.println(Arrays.asList(layers[layers.length - 1].neurons).stream().map(Object::toString)
-                    .collect(Collectors.joining("\n")));
-        }
+        neuralNetwork.predict();
     }
 
-    // TODO edit this
+    // TODO edit this to generalize
     private static Layer[] initLayers() {
         Layer[] layers = new Layer[3];
-        layers[0] = null;
-        layers[1] = new Layer(2, 6);
-        layers[2] = new Layer(6, 1);
+        layers[1] = new Layer(2, 16);
+        layers[2] = new Layer(16, 1);
         return layers;
     }
 

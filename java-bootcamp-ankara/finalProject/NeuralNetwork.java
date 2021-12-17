@@ -1,3 +1,6 @@
+import java.util.Arrays;
+import java.util.stream.Collectors;
+
 public class NeuralNetwork {
     Layer[] layers;
     TrainingData[] trainingData;
@@ -9,7 +12,6 @@ public class NeuralNetwork {
 
     public void forwardPropagation(float[] inputs) {
         layers[0] = new Layer(inputs);
-
         for (int i = 1; i < layers.length; i++) {
             for (int j = 0; j < layers[i].neurons.length; j++) {
                 float sum = 0;
@@ -65,8 +67,9 @@ public class NeuralNetwork {
     public float sumGradient(int neuronIndex, int layerIndex) {
         float gradientSum = 0;
         Layer currentLayer = layers[layerIndex];
+        Neuron currentNeuron;
         for (int i = 0; i < currentLayer.neurons.length; i++) {
-            Neuron currentNeuron = currentLayer.neurons[i];
+            currentNeuron = currentLayer.neurons[i];
             gradientSum += currentNeuron.weights[neuronIndex] * currentNeuron.gradient;
         }
         return gradientSum;
@@ -78,6 +81,22 @@ public class NeuralNetwork {
                 forwardPropagation(trainingDatum.data);
                 backpropagation(learningRate, trainingDatum);
             }
+        }
+    }
+
+    public void predict() {
+        for (TrainingData trainingDatum : trainingData) {
+            forwardPropagation(trainingDatum.data);
+            System.out.println(Arrays.asList(layers[layers.length - 1].neurons).stream().map(Object::toString)
+                    .collect(Collectors.joining("\n")));
+        }
+    }
+
+    public void predictExactly() {
+        for (TrainingData trainingDatum : trainingData) {
+            forwardPropagation(trainingDatum.data);
+            System.out.println(Arrays.asList(layers[layers.length - 1].neurons).stream()
+                    .map(neuron -> neuron.value > 0.5 ? "1" : "0").collect(Collectors.joining("\n")));
         }
     }
 }
