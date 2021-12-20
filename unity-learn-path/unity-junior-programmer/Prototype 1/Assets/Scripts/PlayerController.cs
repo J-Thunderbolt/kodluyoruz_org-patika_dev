@@ -4,8 +4,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    private float speed = 10.0f;
-    private float turnSpeed = 25.0f;
+    public Camera mainCamera;
+    public Camera hoodCamera;
+    public KeyCode switchKey;
+    public string inputID;
+
+    private float speed = 25.0f;
+    private float turnSpeed = 55.0f;
     private float horizontalInput;
     private float verticalInput;
     void Start()
@@ -15,11 +20,17 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        horizontalInput = Input.GetAxis("Horizontal");
-        verticalInput = Input.GetAxis("Vertical");
+        horizontalInput = Input.GetAxis("Horizontal" + inputID);
+        verticalInput = Input.GetAxis("Vertical" + inputID);
 
         transform.Translate(Vector3.forward * Time.deltaTime * speed * verticalInput);
 
         transform.Rotate(Vector3.up, Time.deltaTime * turnSpeed * horizontalInput);
+
+        if (Input.GetKeyDown(switchKey))
+        {
+            mainCamera.enabled = !mainCamera.enabled;
+            hoodCamera.enabled = !hoodCamera.enabled;
+        }
     }
 }
