@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public float horizontalInput;
-    private float speed = 30.0f;
-    public float xRange = 20.0f;
+    private float speed = 20.0f;
+    public float xRange = 10.0f;
     public GameObject projectilePrefab;
     void Start()
     {
@@ -17,12 +17,13 @@ public class PlayerController : MonoBehaviour
     {
         if (transform.position.x < -xRange)
         {
-            transform.position = Vector3.right * -xRange;
+            transform.position = new Vector3(1, 0, 0) * -xRange;
         }
         if (transform.position.x > xRange)
         {
-            transform.position = Vector3.right * xRange;
+            transform.position = new Vector3(1, 0, 0) * xRange;
         }
+
         horizontalInput = Input.GetAxis("Horizontal");
         transform.Translate(Vector3.right * horizontalInput * speed * Time.deltaTime);
 
