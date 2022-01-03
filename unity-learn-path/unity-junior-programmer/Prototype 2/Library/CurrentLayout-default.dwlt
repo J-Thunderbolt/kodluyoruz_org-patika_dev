@@ -113,10 +113,14 @@ MonoBehaviour:
     y: 30
     width: 1536
     height: 748
-  m_MinSize: {x: 709, y: 492}
-  m_MaxSize: {x: 18004, y: 14042}
+  m_MinSize: {x: 709, y: 471}
+  m_MaxSize: {x: 18004, y: 14021}
   vertical: 0
+<<<<<<< HEAD
   controlID: 132
+=======
+  controlID: 35
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -141,7 +145,11 @@ MonoBehaviour:
   m_MinSize: {x: 201, y: 442}
   m_MaxSize: {x: 4001, y: 8042}
   vertical: 1
+<<<<<<< HEAD
   controlID: 34
+=======
+  controlID: 97
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
 --- !u!114 &7
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -215,10 +223,14 @@ MonoBehaviour:
     y: 0
     width: 280
     height: 748
-  m_MinSize: {x: 232, y: 492}
-  m_MaxSize: {x: 10002, y: 14042}
+  m_MinSize: {x: 232, y: 471}
+  m_MaxSize: {x: 10002, y: 14021}
   vertical: 1
+<<<<<<< HEAD
   controlID: 80
+=======
+  controlID: 72
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -425,9 +437,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.4846537, y: 12.86013, z: 3.8613548}
+    m_Target: {x: 0, y: 14.984327, z: 0}
     speed: 2
-    m_Value: {x: 0.4846537, y: 12.86013, z: 3.8613548}
+    m_Value: {x: 0, y: 14.984327, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -473,13 +485,17 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.17098325, y: 0.028076207, z: -0.0048743403, w: 0.98486257}
+    m_Target: {x: 0.27601424, y: -0.040353607, z: 0.011599396, w: 0.9602365}
     speed: 2
+<<<<<<< HEAD
     m_Value: {x: 0.17098314, y: 0.028076187, z: -0.004874337, w: 0.98486185}
+=======
+    m_Value: {x: 0.27601412, y: -0.04035359, z: 0.011599391, w: 0.960236}
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
   m_Size:
-    m_Target: 27.427132
+    m_Target: 21.285686
     speed: 2
-    m_Value: 27.427132
+    m_Value: 21.285686
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -533,9 +549,15 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
+<<<<<<< HEAD
       m_SelectedIDs: ae2c0000
       m_LastClickedID: 0
       m_ExpandedIDs: 96f9fffff2faffff
+=======
+      m_SelectedIDs: 5c760000
+      m_LastClickedID: 0
+      m_ExpandedIDs: 5284fdffe28efdff28c2fdffa4c2fdff6ec3fdfff4dafdffc6f5fdff04f6fdffb0f6fdff8211feffac2cfeffb672feffc072fefffe72feff3c73feff1a90feff8eaffeffd8affeff16bcfeff26bcfeff38bcfeffcebffefffc25ffff107effff347efffff47effff
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -598,7 +620,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts
+    - Assets/Prefabs
   m_ViewMode: 0
   m_StartGridSize: 16
   m_LastFolders:
@@ -612,7 +634,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 9e430000
     m_LastClickedID: 17310
+<<<<<<< HEAD
     m_ExpandedIDs: 00000000fc3e0000fe3e0000003f0000
+=======
+    m_ExpandedIDs: 00000000967a0000987a00009a7a0000
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -640,21 +666,25 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: ffffffff00000000fc3e0000fe3e0000003f0000
+=======
+    m_ExpandedIDs: ffffffff00000000967a0000987a00009a7a0000b47a0000
+>>>>>>> parent of 4a66695 (Revert "Add Bonus Features 2")
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: Dog_Beagle_01
+      m_OriginalName: Dog_Beagle_01
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 30302
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 11}
     m_SearchString: 

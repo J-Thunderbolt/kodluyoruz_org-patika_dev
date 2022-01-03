@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class DetectCollisions : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private GameManager gameManager;
+
+    void Awake()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
     void Start()
-    {
+    { }
 
-    }
-
-    // Update is called once per frame
     void Update()
-    {
-
-    }
+    { }
 
     private void OnTriggerEnter(Collider other)
     {
-        Destroy(other.gameObject);
-        Destroy(gameObject);
+        if (other.CompareTag("Player"))
+        {
+            Destroy(gameObject);
+            gameManager.AddLife(-1);
+        }
+        else if (other.CompareTag("Projectile"))
+        {
+            gameObject.GetComponent<AnimalHunger>().FeedAnimal(1);
+            Destroy(other.gameObject);
+        }
     }
 }
