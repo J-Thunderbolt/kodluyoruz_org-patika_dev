@@ -9,7 +9,7 @@ Bu repo [Kodluyoruz](https://www.kodluyoruz.org) Git Eğitiminde oluşturduğum 
 Öncelikle projeyi clonelayın.
 
 ```bash
-git clone https://github.com/J-Thunderbolt/kodluyoruzilkrepo.git
+git clone https://github.com/y-yildirim/kodluyoruzilkrepo.git
 ```
 
 ## Usage
